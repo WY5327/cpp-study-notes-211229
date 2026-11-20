@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>welcome to here（c++）</title><meta name="author" content="namic"><meta name="copyright" content="namic"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="namic">
+<meta property="og:type" content="website">
+<meta property="og:title" content="welcome to here">
+<meta property="og:url" content="https://wy5327.github.io/cpp-study-notes-211229/index.html">
+<meta property="og:site_name" content="welcome to here">
+<meta property="og:description" content="namic">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://namic00.github.io/img/toux.png">
+<meta property="article:author" content="namic">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://namic00.github.io/img/toux.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "welcome to here",
+  "alternateName": [
+    "namic",
+    "namic00.github.io"
+  ],
+  "url": "https://namic00.github.io/"
+}</script><link rel="icon" type="image/png" sizes="64x64" href="/cpp-study-notes-211229/img/site-icon.png?v=terminal"><link rel="canonical" href="https://wy5327.github.io/cpp-study-notes-211229/index.html"><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/cpp-study-notes-211229/css/index.css?v=5.5.2"><link rel="stylesheet" href="/cpp-study-notes-211229/vendor/fontawesome/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fb23400d6a429999ae2245a0e37e84ac";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/cpp-study-notes-211229/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/cpp-study-notes-211229/vendor/infinitegrid/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'welcome to here',
+  isHighlightShrink: true,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 7.3.0"><style>
+#page-header.full_page::before { display: none; }
+.home-cover {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  container-type: size;
+}
+.home-cover::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100cqh;
+  height: 100cqw;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  background: linear-gradient(var(--mark-bg), var(--mark-bg)),
+    url(/cpp-study-notes-211229/img/covers/home.jpg) center / cover no-repeat;
+}
+#content-inner.home-layout {
+  display: grid;
+  grid-template-columns: 232px minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+  max-width: 1252px;
+}
+.home-profile {
+  padding: 26px 16px;
+  text-align: center;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--card-box-shadow);
+}
+.home-profile img {
+  display: block;
+  width: 104px;
+  height: 104px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.home-profile h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+.home-profile p {
+  margin: 8px 0 0;
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  #content-inner.home-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .home-profile {
+    order: 1;
+  }
+}
+</style></head><body><div id="web_bg" style="background-color: rgb(255,251,240);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/cpp-study-notes-211229/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><div class="home-cover" aria-hidden="true"></div><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/cpp-study-notes-211229/"><span class="site-name">welcome to here</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/cpp-study-notes-211229/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">welcome to here</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout hide-aside home-layout" id="content-inner">
+<aside class="home-profile" aria-label="站点介绍">
+  <img src="/cpp-study-notes-211229/img/home-profile.png" alt="" width="104" height="104" loading="lazy">
+  <h2>王遇</h2>
+  <p>代码能跑谢天谢地，至于原理全凭运气</p>
+</aside><div class="recent-posts nc masonry" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover"><a href="/cpp-study-notes-211229/namic/notes/211230/" title="C++提高编程"><img class="post-bg" src="/cpp-study-notes-211229/img/covers/advanced.jpg" onerror="this.onerror=null;this.src='/cpp-study-notes-211229/img/404.jpg'" alt="C++提高编程"></a></div><div class="recent-post-info"><a class="article-title" href="/cpp-study-notes-211229/namic/notes/211230/" title="C++提高编程 3">C++提高编程 3</a><div class="content"> 本阶段主要针对C++泛型编程和STL技术做详细讲解，探讨C++更深层的使用  1 模板1.1 模板的概念模板就是建立通用的模具，大大提高复用性 模板的特点：  模板不可以直接使用，它只是一个框架 模板的通用并不是万能的  1.2 函数模板 C++另一种编程思想称为 &#x3D;&#x3D;泛型编程&#x3D;&#x3D; ，主要利用的技术就是模板  C++提供两种模板机制:函数模板和类模板   1.2.1 函数模板语法函数模板作用： 建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个虚拟的类型来代表。 语法：  12template&lt;typename T&gt;函数声明或定义  解释： template  —  声明创建模板 typename  — 表面其后面的符号是一种数据类型，可以用class代替 T    —   通用的数据类型，名称可以替换，通常为大写字母 示例： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051...</div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/cpp-study-notes-211229/namic/notes/211229/" title="C++核心编程"><img class="post-bg" src="/cpp-study-notes-211229/img/covers/core.jpg" onerror="this.onerror=null;this.src='/cpp-study-notes-211229/img/404.jpg'" alt="C++核心编程"></a></div><div class="recent-post-info"><a class="article-title" href="/cpp-study-notes-211229/namic/notes/211229/" title="C++核心编程 2">C++核心编程 2</a><div class="content">本阶段主要针对C++面向对象编程技术做详细讲解，探讨C++中的核心和精髓。 内存分区模型C++程序在执行时，将内存大方向划分为4个区域  代码区：存放函数体的二进制代码，由操作系统进行管理的 全局区：存放全局变量和静态变量以及常量 栈区：由编译器自动分配释放, 存放函数的参数值,局部变量等 堆区：由程序员分配和释放,若程序员不释放,程序结束时由操作系统回收  内存四区意义： 不同区域存放的数据，赋予不同的生命周期, 给我们更大的灵活编程 程序运行前​	在程序编译后，生成了exe可执行程序，未执行该程序前分为两个区域 ​	代码区： ​		存放 CPU 执行的机器指令 ​		代码区是共享的，共享的目的是对于频繁被执行的程序，只需要在内存中有一份代码即可 ​		代码区是只读的，使其只读的原因是防止程序意外地修改了它的指令 ​	全局区： ​		全局变量和静态变量存放在此. ​		全局区还包含了常量区, 字符串常量和其他常量也存放在此. ​		该区域的数据在程序结束后由操作系统释放. 示例： 1234567891011121314151617181920212223242526272829...</div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/cpp-study-notes-211229/namic/notes/211228/" title="C++基础编程"><img class="post-bg" src="/cpp-study-notes-211229/img/covers/basic.jpg" onerror="this.onerror=null;this.src='/cpp-study-notes-211229/img/404.jpg'" alt="C++基础编程"></a></div><div class="recent-post-info"><a class="article-title" href="/cpp-study-notes-211229/namic/notes/211228/" title="C++基础编程 1">C++基础编程 1</a><div class="content">其实之前做了纸质版的笔记，但是没有带过来，不方便使用。于是就直接把黑马的笔记放了上来。视频链接: 黑马程序员匠心之作|C++教程从0到1入门编程,学习编程不再难 1 C++初识1.0 可执行程序是如何生成的(补)  预处理：预处理器执行已预处理指令（#开头的指令），得到预处理文件  #include ：头文件包含（把头文件中的内容复制到指令所在位置） #define MAXSIZE 9：宏定义（文本替换，代码中MAXSIZE替换成9） #define F(x) (1+(x)+(x)*(x)):宏函数（文本替换，如代码中F(5)替换成(1+(5)+(5)*(5))。）  编译：编译器将预处理文件翻译成对应平台的汇编代码。 汇编：汇编器把生成的汇编代码翻译成对应平台机器代码（二进制代码）。此时程序还不能运行，还需要最后一个步骤 链接：把汇编器生成的目标代码和程序需要的其他附加代码整合在一起，生成可执行程序。 1.1 注释作用：在代码中加一些说明和解释，方便自己或其他程序员程序员阅读代码 两种格式  单行注释：// 描述信息  通常放在一行代码的上方，或者一条语句的末尾，对该行代码说明...</div></div></div></div></div></main></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/cpp-study-notes-211229/js/utils.js?v=5.5.2"></script><script src="/cpp-study-notes-211229/js/main.js?v=5.5.2"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://namic-js-1307435737.cos.ap-chengdu.myqcloud.com/background%20effect/typed.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = [].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  btf.getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js')
+    .then(() => {
+      jinrishici.load(result => {
+        if (result && result.data && result.data.content) {
+          typedJSFn.processSubtitle(result.data.content)
+        } else {
+          throw new Error('Failed to parse the return value of Jinrishici API')
+        }
+      })
+    })
+    .catch(err => {
+      console.error('Failed to get the Jinrishici API:', err)
+      typedJSFn.processSubtitle(0)
+    })
+}
+typedJSFn.run(subtitleType)
+</script></div></div></body></html>
